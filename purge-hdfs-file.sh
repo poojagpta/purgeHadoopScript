@@ -43,7 +43,7 @@ pri_count=`expr $count_char + 3`;
       if [ ! -z $arg_key ]  && [ ! -z $arg_val ]  && [ ! -z $pri ];  then
        echo "alter table $1  drop partition($arg_key='$arg_val',$pri);" >> $FILE;
        echo "dfs  -rm -R $file_name ;" >> $FILE;
-       #my_value=$( hive -S -e "USE ai_semantic_app;  alter table $1 drop partition($arg_key='$arg_val',$pri); dfs  -rm -R $file_name ; ");
+       #my_value=$( hive -S -e "USE test;  alter table $1 drop partition($arg_key='$arg_val',$pri); dfs  -rm -R $file_name ; ");
        #echo $my_value
       fi
    fi
